@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <style>
+
+
+
+.login-form {
+    
+    flex: 1;
+    padding: 20px;
+    background-color: #ffffff; 
+}
+    h2 {
+            text-align: center;
+            color: #4f4f4f;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #666;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus {
+            border-color: #ff8c94;
+        }
+
+        .or {
+            text-align: center;
+            font-weight: bold;
+            margin: 16px 0;
+            color: #666;
+        }
+
+        .forgot-password {
+            text-align: center;
+            margin-bottom: 16px;
+            color: #0f0a0a;
+        }
+
+        .forgot-password a {
+            color: #000000;
+            text-decoration: none;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .forgot-password a:hover {
+            color: #000000;
+        }
+
+        button {
+            background-color: #ff8c94;
+            color: #fff;
+            padding: 12px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #f1d6d7;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 10% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #333;
+            text-decoration: none;
+        }
+    </style>
+    <title>Login Page</title>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-image">
+            <img src="https://enterprise.bharatpe.in/img/login/sign-in-pay.svg" alt="Login Image">
+        </div>
+        <div class="login-form">
+            <h2>Login with Username</h2>
+            <form>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <div class="or">OR</div>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+
+                <label for="otp">OTP:</label>
+                <input type="text" id="otp" name="otp" placeholder="Enter OTP">
+
+                <div class="forgot-password">
+                    <a href="#" onclick="openModal()">Forgot Password?</a>
+                </div>
+
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="resetPasswordModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Reset Password</h2>
+            <form>
+                <label for="newPassword">New Password:</label>
+                <input type="password" id="newPassword" name="newPassword" required>
+
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+                <button type="submit">Reset Password</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openModal() {
+            document.getElementById('resetPasswordModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('resetPasswordModal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
